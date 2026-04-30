@@ -63,36 +63,53 @@
   </section>
 
   <script>
-    const signupForm = document.getElementById("signupForm");
+  const signupForm = document.getElementById("signupForm");
 
-    signupForm.addEventListener("submit", function(e) {
-      e.preventDefault();
+  signupForm.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-      // Collect all form data
-      const formData = {
-        fullName: signupForm.fullName.value,
-        email: signupForm.email.value,
-        password: signupForm.password.value,
-        phone: signupForm.phone.value,
-        address: signupForm.address.value,
-        linkedUrl: signupForm.linkedUrl.value,
-        college: signupForm.college.value,
-        branch: signupForm.branch.value,
-        year: signupForm.year.value,
-        skills: signupForm.skills.value,
-        careerInterests: signupForm.careerInterests.value,
-        jobLocation: signupForm.jobLocation.value,
-        internshipGoals: signupForm.internshipGoals.value,
-        salaryRange: signupForm.salaryRange.value
-      };
+    // Collect all form data
+    const formData = {
+      name: signupForm.fullName.value,
+      email: signupForm.email.value,
+      password: signupForm.password.value,
+      phone: signupForm.phone.value,
+      address: signupForm.address.value,
+      linkedUrl: signupForm.linkedUrl.value,
+      college: signupForm.college.value,
+      branch: signupForm.branch.value,
+      year: signupForm.year.value,
+      skills: signupForm.skills.value,
+      careerInterests: signupForm.careerInterests.value,
+      jobLocation: signupForm.jobLocation.value,
+      internshipGoals: signupForm.internshipGoals.value,
+      salaryRange: signupForm.salaryRange.value
+    };
 
-      // Save user data to localStorage
-      localStorage.setItem("loggedInUser", JSON.stringify(formData));
-      alert("Account created successfully!");
+    // Get existing users array from localStorage (or create empty array)
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-      // Redirect to home page
-      window.location.href = "index.html";
-    });
-  </script>
+    // Check if email already exists
+    const existingUser = users.find(u => u.email === formData.email);
+    if (existingUser) {
+      alert("This email is already registered. Please log in.");
+      return;
+    }
+
+    // Add new user to the users array
+    users.push(formData);
+
+    // Save updated users array back to localStorage
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // Also save as logged-in user
+    localStorage.setItem("loggedInUser", JSON.stringify(formData));
+
+    alert("Account created successfully!");
+
+    // Redirect to home page
+    window.location.href = "index.html";
+  });
+</script>
 </body>
 </html>
