@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Internships - Smart Career Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <h1>Smart Career Guide</h1>
+
+    <nav class="side-menu" id="sideMenu">
+      <a href="index.html">Home</a>
+      <a href="resources.html">Resources</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html" class="active">Internships</a>
+      <a href="Aboutus.html">About us</a>
+      <a href="Help.html">Help</a>
+    </nav>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <section class="resources-section">
+      <h2>Find Internships for Students</h2>
+      <p>Internships help you gain real-world experience and build your resume. Explore these platforms to find internships in software development, data analytics, cybersecurity, and more.</p>
+
+      <h3>Internship Portals</h3>
+      <ul>
+        <li><b>Internshala:</b> <a href="https://internshala.com/" target="_blank">Browse thousands of internships across India</a></li>
+        <li><b>LinkedIn Internships:</b> <a href="https://www.linkedin.com/jobs/internship-jobs/" target="_blank">Search internships by location and field</a></li>
+        <li><b>LetsIntern:</b> <a href="https://www.letsintern.com/" target="_blank">Find online and offline internships</a></li>
+        <li><b>Unstop (formerly Dare2Compete):</b> <a href="https://unstop.com/internships" target="_blank">Explore internship opportunities</a></li>
+      </ul>
+
+      <h3>How to Get Selected</h3>
+      <ul>
+        <li>Apply early—many internships fill up quickly</li>
+        <li>Tailor your resume to match the internship requirements</li>
+        <li>Highlight relevant projects from your B.Tech coursework</li>
+        <li>Prepare for technical assessments and coding challenges</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const sideMenu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("overlay");
+
+    hamburger.addEventListener("click", () => {
+      sideMenu.classList.toggle("open");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      sideMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>

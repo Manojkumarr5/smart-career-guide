@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jobs - Smart Career Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <h1>Smart Career Guide</h1>
+
+    <nav class="side-menu" id="sideMenu">
+      <a href="index.html">Home</a>
+      <a href="resources.html">Resources</a>
+      <a href="jobs.html" class="active">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="Aboutus.html">About us</a>
+      <a href="Help.html">Help</a>
+    </nav>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <section class="resources-section">
+      <h2>Find Jobs for Fresh Graduates</h2>
+      <p>Looking for entry-level jobs and fresher positions? Use the resources below to find opportunities that match your engineering branch and skills.</p>
+
+      <h3>Job Portals</h3>
+      <ul>
+        <li><b>LinkedIn Jobs:</b> <a href="https://www.linkedin.com/jobs/" target="_blank">Search fresher and entry-level jobs</a></li>
+        <li><b>Naukri:</b> <a href="https://www.naukri.com/fresher-jobs" target="_blank">Browse fresher jobs</a></li>
+        <li><b>Internshala Jobs:</b> <a href="https://internshala.com/fresher-jobs/" target="_blank">Explore job listings</a></li>
+        <li><b>Indeed India:</b> <a href="https://www.indeed.co.in/" target="_blank">Search jobs by location and skills</a></li>
+      </ul>
+
+      <h3>Tips for Freshers</h3>
+      <ul>
+        <li>Update your LinkedIn profile with projects and skills</li>
+        <li>Prepare a strong resume highlighting your B.Tech projects</li>
+        <li>Apply to 5-10 jobs daily to increase your chances</li>
+        <li>Practice common interview questions for technical roles</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const sideMenu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("overlay");
+
+    hamburger.addEventListener("click", () => {
+      sideMenu.classList.toggle("open");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      sideMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>
